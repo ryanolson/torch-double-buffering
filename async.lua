@@ -10,7 +10,7 @@ a = a_host:cuda()
 c = c_host:cuda()
 b = { b_host[1]:cuda(), b_host[2]:cuda() }
 
-p = 2
+p = 1
 
 cutorch.reserveStreams(2, true)
 print("number of streams: " .. cutorch.getNumStreams())
@@ -24,7 +24,7 @@ for i = 1, 10 do
 
   cutorch.setStream(p)
   torch.mm(c, a, b[p])
-  cutorch.synchronize()
+  cutorch.synchronizeAll()
 end
 print("totalTimer: " .. totalTimer:time().real)
   
