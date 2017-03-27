@@ -35,3 +35,14 @@ totalTimer: 1.4027299880981
 async
 totalTimer: 1.2087471485138	
 ```
+
+## double-buffer.lua
+
+Toy example of how one might convert Soumith's Multi-GPU ImageNet code
+to an async version.
+
+The critical component is the `trainBatch` in Soumith's code copies the data
+then computes on it.
+
+In this verison, `CopyAndCompute` handles the double buffering, and `Compute`
+does the heavy lifting.

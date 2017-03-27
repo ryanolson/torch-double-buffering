@@ -1,0 +1,46 @@
+number of streams: 2	
+Starting worker with id: 1; seed: 1
+Starting worker with id: 4; seed: 4
+Starting worker with id: 2; seed: 2
+Starting worker with id: 3; seed: 3
+main thread currentStream: 0	
+[tid 1]: images=K0uI66EpxM label=YvPX
+[tid 1]: images=wp4bRXhZ2e label=GboG
+[tid 1]: images=AuYPVAGBfg label=7xZ9
+[tid 1]: images=4OzyWtVfMh label=jJ80
+[tid 1]: images=wkVYiILETm label=en2d
+[tid 3]: images=V055aZsnAP label=tB9e
+[tid 4]: images=Vku3qg1eGd label=QftD
+[tid 2]: images=UovtmcmTWO label=HDe6
+AsyncCopy: images=K0uI66EpxM labels=YvPX on stream=2
+AsyncCopy: images=wp4bRXhZ2e labels=GboG on stream=1
+Computing: images=K0uI66EpxM labels=YvPX on stream=2
+Sync on stream=2
+[tid 1]: images=ysorQwh4PO label=u9N4
+AsyncCopy: images=AuYPVAGBfg labels=7xZ9 on stream=2
+Computing: images=wp4bRXhZ2e labels=GboG on stream=1
+Sync on stream=1
+[tid 3]: images=f9j0F6Ib9H label=ksnG
+AsyncCopy: images=4OzyWtVfMh labels=jJ80 on stream=1
+Computing: images=AuYPVAGBfg labels=7xZ9 on stream=2
+Sync on stream=2
+AsyncCopy: images=wkVYiILETm labels=en2d on stream=2
+Computing: images=4OzyWtVfMh labels=jJ80 on stream=1
+Sync on stream=1
+AsyncCopy: images=V055aZsnAP labels=tB9e on stream=1
+Computing: images=wkVYiILETm labels=en2d on stream=2
+Sync on stream=2
+AsyncCopy: images=ysorQwh4PO labels=u9N4 on stream=2
+Computing: images=V055aZsnAP labels=tB9e on stream=1
+Sync on stream=1
+AsyncCopy: images=f9j0F6Ib9H labels=ksnG on stream=1
+Computing: images=ysorQwh4PO labels=u9N4 on stream=2
+Sync on stream=2
+AsyncCopy: images=Vku3qg1eGd labels=QftD on stream=2
+Computing: images=f9j0F6Ib9H labels=ksnG on stream=1
+Sync on stream=1
+AsyncCopy: images=UovtmcmTWO labels=HDe6 on stream=1
+Computing: images=Vku3qg1eGd labels=QftD on stream=2
+Sync on stream=2
+Computing: images=Vku3qg1eGd labels=QftD on stream=2
+Finished	
