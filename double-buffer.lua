@@ -56,11 +56,12 @@ state[2] = nil
 print("main thread currentStream: " .. cutorch.getStream())
 
 
-function Compute(images, labels)
+function Compute(images, labels, streamID)
   -- this should be the training function
   -- do not use cutorch.synchronize within this function or it will cause the
   -- other data loading streams to unnecesarily sync
   -- instead, use cutorch.streamWaitFor on the cutorch.getStream
+  cutorch.setStream(streamID)
   printf("Computing: images=%s labels=%s on stream=%d\n", images, labels, cutorch.getStream())
 end
 
@@ -80,9 +81,8 @@ function CopyAndCompute(images, labels)
  
   -- compute minibatch that was previously inflight
   if state[computeStream] then
-    cutorch.setStream(computeStream)
     minibatch = state[computeStream]
-    Compute(minibatch.images, minibatch.labels)
+    Compute(minibatch.images, minibatch.labels, computeStream)
     printf("Sync on stream=%d\n", cutorch.getStream())
   end
 
@@ -109,5 +109,5 @@ end
 workers:synchronize()
 finalComputeStream = (workingStream % 2) + 1
 minibatch = state[finalComputeStream]
-Compute(minibatch.images, minibatch.labels)
+Compute(minibatch.images, minibatch.labels, finalComputeStream)
 print("Finished")
